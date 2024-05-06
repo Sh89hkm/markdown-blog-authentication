@@ -79,7 +79,10 @@ router.post('/signup', async (req, res) => {
 
 router.get('/signout', (req, res) => {
   // @TODO: Complete user sign out
-
+  // Unset user details and redirect to home page
+  res.setHeader('user', null);
+  req.user = null;
+  res.redirect('/');
 });
 
 // renders sign up page
